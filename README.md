@@ -6,8 +6,6 @@ Slack App を活用するためのナレッジベースです。
 
 GAS（Google Apps Script）から Slack API を利用する際の手順・設計パターン・トラブルシューティングなどをドキュメントとしてまとめています。
 
-> **注意**: このリポジトリにはドキュメントのみを格納しています。ソースコードは含まれません。
-
 ## ドキュメント一覧
 
 ### 基礎編
@@ -22,9 +20,9 @@ GAS（Google Apps Script）から Slack API を利用する際の手順・設計
 
 | ドキュメント | 概要 |
 |-------------|------|
-| [Google Calendar → Slack 定期通知](docs/scheduled-notification.md) | GAS トリガーで Google Calendar の予定を毎日 Slack に通知する |
+| [Google Calendar → Slack 定期通知](features/scheduled-notification/README.md) | GAS トリガーで Google Calendar の予定を毎日 Slack に通知する |
 | [Slash Commands + Modal でURL共有](docs/slash-commands.md) | スラッシュコマンドからフォームを起動し、記事URLを共有する |
-| [Welcome メッセージの自動送信](docs/welcome-message.md) | 新メンバーがチャンネルに参加したら Welcome メッセージを送る |
+| [Welcome メッセージの自動送信](features/welcome-message/README.md) | 新メンバーがワークスペースに参加したら Welcome メッセージを送る |
 
 ### 補足・リファレンス
 
@@ -37,16 +35,23 @@ GAS（Google Apps Script）から Slack API を利用する際の手順・設計
 
 ```
 slack-app-handbook/
-├── README.md          # このファイル
-├── AGENTS.md          # AIコーディングエージェント向け指示ファイル
-├── docs/              # ガイドライン・手順書
-└── images/            # ドキュメント用画像
+├── README.md                # このファイル
+├── docs/                    # ガイドライン・手順書
+│   ├── slack-app-setup.md
+│   ├── gas-slack-integration.md
+│   ├── message-formatting.md
+│   ├── slash-commands.md
+│   ├── scopes-reference.md
+│   └── troubleshooting.md
+└── features/                # 機能別ガイド + ソースコード
+    ├── scheduled-notification/
+    │   ├── README.md
+    │   └── app.js
+    └── welcome-message/
+        ├── README.md
+        └── app.js
 ```
 
 ## コントリビューション
 
 Issue や Pull Request はお気軽にどうぞ。
-
-### AIエージェント向け設定
-
-- **AGENTS.md**: ローカルのAIエージェント（VS Code Copilot Editsなど）向けの指示ファイル
